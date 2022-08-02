@@ -25,14 +25,14 @@ public class CameraAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if(Input.touchCount > 0)
         {
-            if (Input.touchCount == 2)
+            if(Input.touchCount == 2)
             {
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
 
-                if (EventSystem.current.IsPointerOverGameObject(touchOne.fingerId)
+                if(EventSystem.current.IsPointerOverGameObject(touchOne.fingerId)
                     || EventSystem.current.IsPointerOverGameObject(touchZero.fingerId))
                 {
                     return;
@@ -52,7 +52,7 @@ public class CameraAction : MonoBehaviour
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
-                        if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                        if(EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                         {
                             moveAllowed = false;
                         }
@@ -63,7 +63,7 @@ public class CameraAction : MonoBehaviour
                         touchPosition = camera.ScreenToWorldPoint(touch.position);
                         break;
                     case TouchPhase.Moved:
-                        if (moveAllowed)
+                        if(moveAllowed)
                         {
                             Vector3 direction = touchPosition - camera.ScreenToWorldPoint(touch.position);
                             camera.transform.position += direction;

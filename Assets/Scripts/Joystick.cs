@@ -40,7 +40,7 @@ public class Joystick : MonoBehaviour
 
         float joystickDist = Vector2.Distance(dragPos, joystickTouchPosition);
 
-        if (joystickDist < joystickRadius)
+        if(joystickDist < joystickRadius)
         {
             joystick.transform.position = joystickTouchPosition + joystickVector * joystickDist;
         }

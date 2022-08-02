@@ -15,9 +15,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     void FixedUpdate()
     {
-        if (joystick.joystickVector.y != 0)
+        if(joystick.joystickVector.y != 0)
         {
             rb.velocity = new Vector2(joystick.joystickVector.x * speed, joystick.joystickVector.y * speed);
         }
